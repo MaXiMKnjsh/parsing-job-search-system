@@ -1,0 +1,32 @@
+﻿<Page x:Class="JobSearchSystem.Pages.InfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JobSearchSystem.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="545" d:DesignWidth="735"
+      Title="InfoPage">
+
+    <Canvas>
+        <TextBlock Canvas.Left="46" Canvas.Top="50" FontSize="22" FontFamily="Segoe UI Black" HorizontalAlignment="Center" VerticalAlignment="Top">Общая информация:</TextBlock>
+        <TextBlock FontSize="15" FontFamily="Segoe UI Symbol" Canvas.Left="46" Canvas.Top="92" HorizontalAlignment="Center" VerticalAlignment="Top" Width="652">Данное приложение создано с целью проработки навыков работы с:<LineBreak/>
+            1)Интерфейсами IEnumerable, IEnumerator;<LineBreak/>
+            2)Бибилиотекой Selenium.WebDriver;<LineBreak/>
+            3)Классами StreamWriter, StreamReader;<LineBreak/>
+            4)Асинхронными методами;<LineBreak/>
+            5)Библиотекой Newtonsoft.Json. <LineBreak/>
+            А также показать стиль, уровень владения C# и др.
+        </TextBlock>
+        <TextBlock FontSize="18" FontFamily="Segoe UI Black" Canvas.Left="46" Canvas.Top="237" HorizontalAlignment="Center" VerticalAlignment="Top">Инструкция работы с приложением:</TextBlock>
+        <TextBlock Canvas.Left="46" Canvas.Top="269" HorizontalAlignment="Center" VerticalAlignment="Top" Width="650" FontFamily="Segoe UI Symbol" FontSize="15">
+            1)Заполнить поисковую строку нужным запросом (название искомой вакансии);<LineBreak/>
+            2)Отметить фильтры поиска (замечание: если ни один checkbox из фильтра выбора городов<LineBreak/> не отмечен, то поиск происходит со занчением по умолчанию - вся Беларусь;<LineBreak/>
+            3)Кликнуть по "SEARCH", при успешно выполненных условиях - откроется консоль и пойдёт<LineBreak/>процесс парсинга сайта, иначе - окно с ошибкой;<LineBreak/>
+            4)После окончания процесса парсинга listview будет заполнен соответсвующими данными и<LineBreak/>вся информация сохранится в логи приложения;<LineBreak/>
+            5)Двойной клик по выбранному пункту lsitview откроет соответсвующую вакансию;<LineBreak/>
+            6)Также можно воспользоваться историей поиска, при её присутствии.
+        </TextBlock>
+        <TextBlock Canvas.Left="285" Canvas.Top="457" HorizontalAlignment="Center" VerticalAlignment="Top"> Спасибо за уделённое время!</TextBlock>
+    </Canvas>
+</Page>
