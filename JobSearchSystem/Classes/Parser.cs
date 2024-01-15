@@ -116,7 +116,7 @@ namespace JobSearchSystem
                 collection.AddToLog();
 
                 }
-                catch (Exception ex) { MessageBox.Show("Что-то случилось...!", "Ошибочка вышла...", MessageBoxButton.OK, MessageBoxImage.Error); }
+                catch { MessageBox.Show("Что-то случилось...!", "Ошибочка вышла...", MessageBoxButton.OK, MessageBoxImage.Error); }
 
             }
 

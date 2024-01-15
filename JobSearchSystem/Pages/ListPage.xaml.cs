@@ -21,7 +21,7 @@ namespace JobSearchSystem.Pages
     /// </summary>
     public partial class ListPage : Page
     {
-        Collection collection;
+        private Collection collection;
         public ListPage(Collection collection)
         {
             InitializeComponent();
@@ -36,11 +36,15 @@ namespace JobSearchSystem.Pages
         {
             if (sender is ListView listView)
             {
-                Process.Start(new ProcessStartInfo()
+                try
                 {
-                    FileName = collection.GetVacancyLink(listView.SelectedIndex),
-                    UseShellExecute = true
-                });            
+                    Process.Start(new ProcessStartInfo()
+                    {
+                        FileName = collection.GetVacancyLink(listView.SelectedIndex),
+                        UseShellExecute = true
+                    });
+                }
+                catch { MessageBox.Show("Windows не нашёл браузер по умолчанию!", "Ошибочка вышла...", MessageBoxButton.OK, MessageBoxImage.Error); }
                 
             }
         }
