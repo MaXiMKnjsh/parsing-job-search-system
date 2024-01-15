@@ -16,4 +16,4 @@ jobs:
         uses: peaceiris/actions-repository-meta@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository_cover: ./path/to/your/image.jpg
+          repository_cover: ./image.jpg
