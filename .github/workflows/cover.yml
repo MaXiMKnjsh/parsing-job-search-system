@@ -1,0 +1,19 @@
+name: Update Cover
+
+on:
+  push:
+    branches:
+      - main  # Измените на вашу основную ветку
+
+jobs:
+  update-cover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set repository cover
+        uses: peaceiris/actions-repository-meta@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository_cover: ./path/to/your/image.jpg
