@@ -36,7 +36,12 @@ namespace JobSearchSystem.Pages
         {
             if (sender is ListView listView)
             {
-                Process.Start(collection.GetVacancyLink(listView.SelectedIndex));            
+                Process.Start(new ProcessStartInfo()
+                {
+                    FileName = collection.GetVacancyLink(listView.SelectedIndex),
+                    UseShellExecute = true
+                });            
+                
             }
         }
     }
