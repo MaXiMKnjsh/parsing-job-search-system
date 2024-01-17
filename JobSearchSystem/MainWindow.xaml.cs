@@ -70,44 +70,43 @@ namespace JobSearchSystem
         // обработка клика на "ЛОГ", т.е. заполнение таблицы
         private async void LogButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            bool isExistLogs =  await Task.Run(()=>WriteFileList());
+            // получает данные для заполнения таблицы всего лога
+            bool isExistLogs =  await Task.Run(() =>
+            {
+                string metaLogPath = "logs\\metaData.txt";
+
+                if (File.Exists(metaLogPath))
+                {
+                    LogPageList = new List<LogPageNode>();
+
+                    using (StreamReader sr = new StreamReader(metaLogPath))
+                    {
+                        string line = string.Empty; string[] buff;
+
+                        while (!sr.EndOfStream)
+                        {
+                            line = sr.ReadLine();
+                            buff = line.Split(new char[] { '\t' });
+
+                            LogPageList.Add(new LogPageNode(buff[1], buff[2], buff[3], buff[0]));
+                        }
+                    }
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Файл-лог пуст!", "Ошибочка вышла...", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+            });
+
             if (isExistLogs)
             {
                 CountBox.Text = "История поиска";
                 navigateClass.NavigateToPage(new LogPage(LogPageList,navigateClass));
             }
         }
-        // получает данные для заполнения таблицы всего лога
-        private async Task<bool> WriteFileList()
-        {
-            string metaLogPath = "logs\\metaData.txt";
-
-            if (File.Exists(metaLogPath))
-            {
-                LogPageList = new List<LogPageNode>();
-                // убираю глазомазоляющее предупреждение о том, что в методе нет await
-                await Task.Delay(0);
-
-                using (StreamReader sr = new StreamReader(metaLogPath))
-                {
-                    string line = string.Empty; string[] buff;
-
-                    while (!sr.EndOfStream)
-                    {
-                        line = sr.ReadLine();
-                        buff = line.Split(new char[] { '\t' });
-
-                        LogPageList.Add(new LogPageNode(buff[1], buff[2], buff[3], buff[0]));
-                    }
-                }
-                return true;
-            }
-            else
-            {
-                MessageBox.Show("Файл-лог пуст!", "Ошибочка вышла...", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
-        }
+        
         private void Info_MouseLeftButtonDown(object sender, MouseButtonEventArgs e) {
             navigateClass.NavigateToPage(new InfoPage());
                 CountBox.Text = "Информация";

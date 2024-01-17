@@ -30,3 +30,7 @@ D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\obj\Debug\Pages\LogPag
 D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\obj\Debug\Pages\ListPage.g.cs
 D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\obj\Debug\Pages\LogPage.baml
 D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\obj\Debug\Pages\ListPage.baml
+D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\homework\selfeducation\JobSearchSystem\JobSearchSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
